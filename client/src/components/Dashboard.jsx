@@ -21,11 +21,15 @@ const Dashboard = () => {
       formDataFinal[key] = value;
     }
     axios
-      .post("https://yourhr-backend-zyy8.onrender.com/auth/login", formDataFinal, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
+      .post(
+        "https://yourhr-backend-zyy8.onrender.com/auth/login",
+        formDataFinal,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      )
       .then((res) => {
         setResponse(res.data.success);
       });
@@ -43,11 +47,22 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="font-bold text-3xl py-4 px-3 border border-slate-950 rounded-md m-2">
-        Dashboard
+      <div>
+        <div className="md:flex justify-between font-bold text-3xl py-4 px-3 border overflow-hidden border-slate-950 rounded-md m-2">
+          Dashboard
+          <div
+            onClick={() => {
+              setAuth("");
+            }}
+            className="md:mt-0 bg-slate-400 p-2 px-3 rounded-md w-32 mt-5 "
+          >
+            Logout
+          </div>
+        </div>
       </div>
-      <div className="border border-slate-950 rounded-md m-2">
+      <div className="border border-slate-950 rounded-md m-2 p-2">
         <form
+          className="flex flex-col items-start"
           method="post"
           action="http://localhost:7777/auth/upload"
           encType="multipart/form-data"
@@ -110,7 +125,14 @@ const Dashboard = () => {
               placeholder="name"
               className=" p-2 font-medium"
             />
-            <input type="submit" value="upload" onClick={handleSubmit} />
+            <div>
+              <input
+                className="bg-slate-400 p-2 px-3 rounded-md"
+                type="submit"
+                value="upload"
+                onClick={handleSubmit}
+              />
+            </div>
           </div>
         </form>
       </div>
