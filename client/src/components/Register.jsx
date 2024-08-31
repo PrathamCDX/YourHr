@@ -14,7 +14,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://yourhr-backend-zyy8.onrender.com/auth/login", {
+      .post("https://yourhr-backend-zyy8.onrender.com/auth/signup", {
         email: userDetails.email,
         password: userDetails.password,
       })

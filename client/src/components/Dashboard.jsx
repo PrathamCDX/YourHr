@@ -22,7 +22,7 @@ const Dashboard = () => {
     }
     axios
       .post(
-        "https://yourhr-backend-zyy8.onrender.com/auth/login",
+        "https://yourhr-backend-zyy8.onrender.com/auth/upload",
         formDataFinal,
         {
           headers: {
