@@ -39,8 +39,16 @@ const Dashboard = () => {
 
   if (response) {
     return (
-      <div className="font-bold text-4xl py-4 text-center">
+      <div className="font-bold flex flex-col text-4xl py-4 text-center items-center">
         Thanks for uploading
+        <div
+          onClick={() => {
+            setAuth("");
+          }}
+          className="md:mt-4 bg-slate-400 p-2 px-3 rounded-md w-36 mt-5  "
+        >
+          Logout
+        </div>
       </div>
     );
   }
